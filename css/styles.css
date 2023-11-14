@@ -1,0 +1,356 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: aliceblue;
+}
+header{
+    display: flex;
+    gap: 15px;
+    width: 99%;
+    background-color: black;
+    height: 65px;
+    padding-left: 17px;
+    opacity: .8;
+    position: fixed;
+    top: 0;
+}
+header a{
+    text-decoration: none;
+    color: gainsboro;
+    transition: .3s;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+header a:hover{
+    transform: scale(1.05);
+}
+.dropdown-content{
+    position: absolute;
+    background-color: black;
+    width: 165px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    top: 66px;
+    left: 95px;
+    z-index: 1;
+    border-radius: 5px;
+    transition: height .3s;
+    height: 0;
+    overflow: hidden;
+}
+.dropdown-content a{
+    padding: 5px 10px;
+    max-height: 38px;
+}
+.dropdown:hover .dropdown-content{
+    height: 145px;
+    flex-direction: column;
+}
+.dropdown:hover .dropdown-arrow{
+    transform: scale(1, -1)
+}
+.dropdown-arrow{
+    transition: .3s;
+}
+.layout{
+    display: flex;
+    width: 93%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    text-align: justify;
+    margin-top: 65px;
+}
+.text-image-hover{
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 97%;
+    height: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, .7);
+    transition: .5s;
+    color: gainsboro;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 11px;
+    user-select: none;
+}
+.image-hover:hover .text-image-hover{
+    height: 95%;
+    padding-bottom: 20px;
+}
+.image-hover{
+    position: relative;
+}
+.block{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+footer{
+    width: 98%;
+    padding: 0 15px;
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    display: flex;
+}
+footer a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+.link-page{
+    font-size: 18px;
+}
+
+.slider {
+    width: 300px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+
+
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    /*
+    scroll-snap-points-x: repeat(300px);
+    scroll-snap-type: mandatory;
+    */
+}
+.slides::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.slides::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+}
+.slides::-webkit-scrollbar-track {
+    background: transparent;
+}
+.slides > div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 300px;
+    height: 300px;
+    margin-right: 50px;
+    border-radius: 10px;
+    background: #eee;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+    padding: 0 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+.slides > div:target {
+    /*   transform: scale(0.8); */
+}
+.author-info {
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 0.75rem;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+}
+.author-info a {
+    color: white;
+}
+.slides-block img {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slider > a {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 0 0.5rem 0;
+    position: relative;
+}
+.slider > a:active {
+    top: 1px;
+}
+.slider > a:focus {
+    background: #000;
+}
+.slides-block{
+    overflow: hidden;
+    width: 600px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #ccc;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.clickable-image{
+    transition: .3s;
+}
+.clickable-image:hover{
+    transform: scale(1.02);
+}
+
+.answer{
+    transition: .3s;
+    position: relative;
+    width: fit-content;
+    margin-left: auto;
+    z-index: 1;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.answer:hover:before{
+    backdrop-filter: unset;
+}
+.answer:before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: .3s;
+    left: 0;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    background-color: #cccccc05;
+}
+
+.wrap {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+.items-wrap {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 50px;
+    box-shadow: 0px 0px 5px gray;
+}
+.items-wrap:before,
+.items-wrap:after {
+    content: "";
+    height: 100%;
+    top: 0;
+    width: 10%;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+.items-wrap:before {
+    left: 0;
+    background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 100%
+    );
+}
+.items-wrap:after {
+    right: 0;
+    background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+    );
+}
+.items {
+    flex-shrink: 0;
+    display: flex;
+    gap: 20px;
+    counter-reset: item;
+    justify-content: space-around;
+    min-width: 100%;
+}
+.item {
+    background: #eee;
+    flex: 0 0 auto;
+    width: 300px;
+    height: 300px;
+    counter-increment: item;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    padding: 0 10px;
+    margin: 10px 0;
+    transition: all 0.1s ease-in-out;
+}
+.item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.item:before {
+    content: counter(item);
+}
+
+.marquee {
+    animation: scroll 20s linear infinite;
+}
+.reverce {
+    animation-direction: reverse;
+}
+.items-wrap:hover .marquee {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% - 20px));
+    }
+}
